@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@import "shadcn/tailwind.css";
+@import 'tailwindcss';
+@import 'shadcn/tailwind.css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -54,7 +54,7 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.90 0.12 92);
+  --primary: oklch(0.9 0.12 92);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.52 0.21 29);
   --secondary-foreground: oklch(0.205 0 0);
@@ -127,16 +127,18 @@
     display: block;
     max-width: 100%;
   }
+
   .perspective-1000 {
     perspective: 1000px;
   }
   .cont {
-    padding-inline: 30px;
+    padding-inline: 50px;
     margin-inline: auto;
   }
   p {
     font-size: 1rem;
     line-height: 1.5rem;
+    color: rgba(0, 0, 0, 0.6);
   }
   h6 {
     font-size: 1.5rem;

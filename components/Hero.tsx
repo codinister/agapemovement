@@ -3,6 +3,7 @@
 import useGetQuery from '@/state/query/useGetQuery';
 import { Button } from './ui/button';
 import Image from 'next/image';
+import { FaLongArrowAltRight } from 'react-icons/fa';
 
 const Hero = () => {
   const { data, isSuccess } = useGetQuery('hero', '/hero');
@@ -26,7 +27,7 @@ const Hero = () => {
       before:content-['']
       before:absolute 
       before:inset-0 
-      before:bg-black/40
+      before:bg-black/60
       before:-z-2
       "
     >
@@ -39,7 +40,11 @@ const Hero = () => {
           height={220}
           className="mx-auto"
         />
-        <p className='text-primary'>{res?.motto}</p>
+        <p className="-mt-3  text-white">{res?.motto}</p>
+
+        <Button className="mt-6 w-full" size="lg">
+          Apply for membership <FaLongArrowAltRight />{' '}
+        </Button>
       </div>
     </div>
   );
