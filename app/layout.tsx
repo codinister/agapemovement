@@ -1,12 +1,12 @@
-
 import './globals.css';
 import type { Metadata } from 'next';
 import QueryProvider from '@/state/query/QueryProvider';
 import Footer from '@/components/Footer';
-import { Geist } from "next/font/google";
-import { cn } from "@/lib/utils";
+import { Geist } from 'next/font/google';
+import { cn } from '@/lib/utils';
+import ReduxProvider from '@/state/redux/ReduxProvider';
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
 export const metadata: Metadata = {
   title: 'UNA Klodin',
@@ -46,12 +46,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-qb-installed="true" suppressHydrationWarning={true} className={cn("font-sans", geist.variable)}>
+    <html
+      lang="en"
+      data-qb-installed="true"
+      suppressHydrationWarning={true}
+      className={cn('font-sans', geist.variable)}
+    >
       <body cz-shortcut-listen="true">
         <QueryProvider>
+          <ReduxProvider>
             {children}
             <Footer />
-
+          </ReduxProvider>
         </QueryProvider>
       </body>
     </html>

@@ -10,7 +10,7 @@ const About = () => {
   return (
     <div className="cont my-15">
       <div className="text-center mb-15 w-160 mx-auto">
-        <h3 className="mb-6">{res?.title}</h3>
+        <h4 className="mb-6">{res?.title}</h4>
         <p>{res?.text}</p>
       </div>
       <div className="flex gap-6 ">

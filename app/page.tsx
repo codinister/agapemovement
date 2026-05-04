@@ -12,7 +12,7 @@ export default function Home() {
       <Hero />
       <About />
       <Goal />
-      <section className="flex flex-col sm:flex-row">
+      <section className="flex gap-6 flex-col sm:flex-row cont py-15">
         <Mission />
         <Service />
       </section>
