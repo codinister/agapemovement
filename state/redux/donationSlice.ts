@@ -54,14 +54,34 @@ const donate = createSlice({
       const info = actions.payload;
       state.info = info;
     },
-    setCurrScreen(state,actions){
-      const cur = actions.payload 
-      state.currScreen = cur
-    }
+    setCurrScreen(state, actions) {
+      const cur = actions.payload;
+      state.currScreen = cur;
+    },
+    resetState(state) {
+      
+        state.frequency = 'One Time'
+        state.amount= state.amount
+        state.custAmount= 0
+        state.totalAmnt= 0
+        state.currScreen = ''
+        state.info = {
+          firstname: '',
+          lastname: '',
+          email: '',
+        }
+      
+    },
   },
 });
 
-export const { setAmount, setCustAmount, setFrequency, setInfo, setCurrScreen } =
-  donate.actions;
+export const {
+  setAmount,
+  setCustAmount,
+  setFrequency,
+  setInfo,
+  setCurrScreen,
+  resetState
+} = donate.actions;
 
 export default donate.reducer;

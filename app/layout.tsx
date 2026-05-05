@@ -6,7 +6,7 @@ import { Geist } from 'next/font/google';
 import { cn } from '@/lib/utils';
 import ReduxProvider from '@/state/redux/ReduxProvider';
 
-const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
   title: 'UNA Klodin',
@@ -50,7 +50,7 @@ export default function RootLayout({
       lang="en"
       data-qb-installed="true"
       suppressHydrationWarning={true}
-      className={cn('font-sans', geist.variable)}
+      className={cn('font-sans', "font-sans", geist.variable)}
     >
       <body cz-shortcut-listen="true">
         <QueryProvider>

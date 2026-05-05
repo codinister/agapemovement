@@ -5,14 +5,17 @@ import Currency from './Currency';
 import CustomAmount from './CustomAmount';
 import DonateBtn from './DonateBtn';
 import DonationFrequency from './DonationFrequency';
+import DonationHeader from './DonationHeader';
 
 const AmountBox = () => {
   return (
     <div>
-      <p className="pb-2 font-extrabold border-b-3 border-b-gray-200">
-        How much would you like to donate today?
-      </p>
-
+      <DonationHeader
+        title="How much would you like to donate today?"
+        progressBar=""
+        info=""
+        showBackBtn={false}
+      />
       <p className="my-5">
         All donations directly impact our organization and help us further our
         mission.
@@ -21,7 +24,7 @@ const AmountBox = () => {
       <Currency />
       <Amount />
       <CustomAmount />
-      <DonateBtn title="Donate now" />
+      <DonateBtn title="Donate now" info="donationInfo" />
     </div>
   );
 };
