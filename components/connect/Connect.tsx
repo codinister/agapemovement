@@ -1,0 +1,91 @@
+'use client';
+
+import Share from './Share';
+import Email from './Email';
+import Phone from './Phone';
+import Whatsapp from './Whatsapp';
+import { BsThreeDots } from 'react-icons/bs';
+import { MdOutlineClose } from 'react-icons/md';
+import { motion } from 'motion/react';
+import { useState } from 'react';
+
+const Connect = () => {
+  const [clicked, setClicked] = useState(false);
+
+  return (
+    <>
+      <div className="fixed right-12 z-10 top-[50%] -translate-y-[50%] w-10 h-10 ">
+        <div
+          className={`z-1 absolute left-0 ${clicked ? '-top-2' : 'bottom-0'} `}
+        >
+          <motion.div
+            initial={{
+              opacity: 0,
+            }}
+            animate={{
+              opacity: 1,
+              top: clicked ? '-166px' : '-40px',
+              transition: {
+                ease: 'easeIn',
+              },
+            }}
+            className="left-0   absolute"
+          >
+            <Share />
+          </motion.div>
+          <motion.div
+            initial={{
+              opacity: 0,
+            }}
+            animate={{
+              opacity: 1,
+              top: clicked ? '-124px' : '-40px',
+
+              transition: {
+                ease: 'easeIn',
+              },
+            }}
+            className="left-0   absolute"
+          >
+            <Email />
+          </motion.div>
+          <motion.div
+            initial={{
+              opacity: 0,
+            }}
+            animate={{
+              opacity: 1,
+              top: clicked ? '-82px' : '-40px',
+              transition: {
+                ease: 'easeIn',
+              },
+            }}
+            className="left-0   absolute"
+          >
+            <Whatsapp />
+          </motion.div>
+
+          <div className={`left-0 bottom-0 absolute`}>
+            <Phone />
+          </div>
+        </div>
+
+        <button
+          onClick={() => setClicked(true)}
+          className={`cursor-pointer z-3 absolute w-10 h-10 text-xl  bg-red-800 rounded-full flex items-center justify-center text-white ${clicked ? 'hidden' : 'block'}`}
+        >
+          <BsThreeDots />
+        </button>
+
+        <button
+          onClick={() => setClicked(false)}
+          className={`cursor-pointer z-2 absolute w-10 h-10 text-xl  bg-red-800 rounded-full flex items-center justify-center text-white ${clicked ? 'block' : 'hidden'}`}
+        >
+          <MdOutlineClose />
+        </button>
+      </div>
+    </>
+  );
+};
+
+export default Connect;

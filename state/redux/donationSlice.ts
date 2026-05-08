@@ -9,8 +9,8 @@ const initialState: {
   totalAmnt: number;
   currScreen: string;
   info: {
-    firstname: string;
-    lastname: string;
+    first_name: string;
+    last_name: string;
     email: string;
   };
 } = {
@@ -20,8 +20,8 @@ const initialState: {
   totalAmnt: 0,
   currScreen: 'amount',
   info: {
-    firstname: '',
-    lastname: '',
+    first_name: '',
+    last_name: '',
     email: '',
   },
 };
@@ -53,25 +53,12 @@ const donate = createSlice({
     setInfo(state, actions) {
       const info = actions.payload;
       state.info = info;
+          state.currScreen = 'paypal';
     },
     setCurrScreen(state, actions) {
       const cur = actions.payload;
       state.currScreen = cur;
-    },
-    resetState(state) {
-      
-        state.frequency = 'One Time'
-        state.amount= state.amount
-        state.custAmount= 0
-        state.totalAmnt= 0
-        state.currScreen = ''
-        state.info = {
-          firstname: '',
-          lastname: '',
-          email: '',
-        }
-      
-    },
+    }
   },
 });
 
@@ -80,8 +67,7 @@ export const {
   setCustAmount,
   setFrequency,
   setInfo,
-  setCurrScreen,
-  resetState
+  setCurrScreen
 } = donate.actions;
 
 export default donate.reducer;

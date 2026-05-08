@@ -57,11 +57,16 @@ export default defineType({
         hotspot: true,
       },
     }),
+    defineField({
+      name: 'whatsapp',
+      title: 'Whatsapp',
+      type: 'string',
+    }),
   ],
   preview: {
     select: {
-      title: 'title', 
-      media: 'logo'
-    }
-  }
+      title: 'title',
+      media: 'logo',
+    },
+  },
 });

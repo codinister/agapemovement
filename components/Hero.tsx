@@ -4,6 +4,7 @@ import useGetQuery from '@/state/query/useGetQuery';
 import { Button } from './ui/button';
 import Image from 'next/image';
 import { FaLongArrowAltRight } from 'react-icons/fa';
+import Link from 'next/link';
 
 const Hero = () => {
   const { data, isSuccess } = useGetQuery('hero', '/hero');
@@ -43,9 +44,11 @@ const Hero = () => {
         />
         <p className="-mt-3  text-white">{res?.motto}</p>
 
-        <Button className="mt-6 w-full" size="lg">
-          Apply for membership <FaLongArrowAltRight />{' '}
-        </Button>
+        <Link href="/register">
+          <Button className="mt-6 w-full" size="lg">
+            Apply for membership <FaLongArrowAltRight />
+          </Button>
+        </Link>
       </div>
     </div>
   );
