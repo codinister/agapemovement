@@ -14,7 +14,7 @@ const Footer = () => {
   const { data, isSuccess } = useGetQuery('settings', '/settings');
   const res = isSuccess ? data.data[0] : [];
 
-  console.log(res);
+
 
   return (
     <>

@@ -8,10 +8,23 @@ import { BsThreeDots } from 'react-icons/bs';
 import { MdOutlineClose } from 'react-icons/md';
 import { motion } from 'motion/react';
 import { useState } from 'react';
+import useGetQuery from '@/state/query/useGetQuery';
 
 const Connect = () => {
   const [clicked, setClicked] = useState(false);
 
+  const { data, isSuccess } = useGetQuery('settings', '/settings');
+  const res = isSuccess ? data.data[0] : [];
+
+  const encoded = encodeURIComponent('https://www.agapemovementus.org');
+  const url = `https://wa.me/?text=${encoded}`;
+
+  const whatsappEncode = encodeURIComponent(
+    'Hello, I would like to make an enquiry.',
+  );
+  const whatsappUrl = `https://wa.me/${res?.whatsapp}?text=${whatsappEncode}`;
+
+  const phoneUrl = `tel:${res?.whatsapp}`;
   return (
     <>
       <div className="fixed right-12 z-10 top-[50%] -translate-y-[50%] w-10 h-10 ">
@@ -31,7 +44,7 @@ const Connect = () => {
             }}
             className="left-0   absolute"
           >
-            <Share />
+            <Share url={url} />
           </motion.div>
           <motion.div
             initial={{
@@ -62,11 +75,11 @@ const Connect = () => {
             }}
             className="left-0   absolute"
           >
-            <Whatsapp />
+            <Whatsapp url={whatsappUrl} />
           </motion.div>
 
           <div className={`left-0 bottom-0 absolute`}>
-            <Phone />
+            <Phone url={phoneUrl} />
           </div>
         </div>
 

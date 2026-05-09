@@ -32,6 +32,8 @@ const EmailForm = () => {
 
   return (
     <div className="top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] w-100 fixed  z-55 p-6 bg-white">
+
+      <h5 className="mb-6 text-center">Get in touch</h5>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(handleSubmit)}>
           <FormField

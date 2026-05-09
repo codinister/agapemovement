@@ -9,24 +9,24 @@ import ReduxProvider from '@/state/redux/ReduxProvider';
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
-  title: 'UNA Klodin',
-  description: `U&A KLODIN is a company specialized in customizing T'shirts,website designing and graphic designs. With a team of young and dynamic professionals committed to provide you with excellent services. We are understanding, unique and multifaceted in ideas
+  title: 'Agape Movement',
+  description: `Agape Movement is a wellness and wholeness community for adults at every stage of life. This space supports personal growth, healthy relationships, marriage, healing after divorce, mental and emotional well-being, parenting, and healthy living.
   `,
 
-  metadataBase: new URL('https://unaklodin.com'), // 🔥 IMPORTANT
+  metadataBase: new URL('https://agapemovementus.org'), // 🔥 IMPORTANT
 
   openGraph: {
-    title: 'UNA Klodin',
-    description: `U&A KLODIN is a company specialized in customizing T'shirts,website designing and graphic designs. With a team of young and dynamic professionals committed to provide you with excellent services. We are understanding, unique and multifaceted in ideas
+    title: 'Agape Movement',
+    description: `Agape Movement is a wellness and wholeness community for adults at every stage of life. This space supports personal growth, healthy relationships, marriage, healing after divorce, mental and emotional well-being, parenting, and healthy living.
     `,
-    url: 'https://unaklodin.com',
-    siteName: 'UNA Klodin',
+    url: 'https://agapemovementus.org',
+    siteName: 'Agape Movement',
     images: [
       {
-        url: '/preview.jpg', // will resolve with metadataBase
+        url: '/logo.png', // will resolve with metadataBase
         width: 1200,
         height: 630,
-        alt: 'UNA Klodin African fashion',
+        alt: 'Agape Movement',
       },
     ],
     type: 'website',
@@ -34,9 +34,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: 'summary_large_image',
-    title: 'UNA Klodin',
-    description: `U&A KLODIN is a company specialized in customizing T'shirts,website designing and graphic designs. With a team of young and dynamic professionals committed to provide you with excellent services. We are understanding, unique and multifaceted in ideas`,
-    images: ['/preview.jpg'],
+    title: 'Agape Movement',
+    description: `Agape Movement is a wellness and wholeness community for adults at every stage of life. This space supports personal growth, healthy relationships, marriage, healing after divorce, mental and emotional well-being, parenting, and healthy living.`,
+    images: ['/logo.png'],
   },
 };
 

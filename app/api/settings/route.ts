@@ -22,6 +22,7 @@ export async function GET(req: NextRequest) {
       facebook,
       instagram,
       twitter,
+      whatsapp,
       'logo': logo.asset->url
     }`);
 
