@@ -23,7 +23,7 @@ const Hero = () => {
         backgroundSize: 'cover',
         backgroundPosition: 'top',
       }}
-      className="h-screen w-full  
+      className="sm:h-screen h-150 w-full  
       flex items-center justify-center
       z-2 relative
       before:content-['']

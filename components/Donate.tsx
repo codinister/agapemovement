@@ -21,6 +21,8 @@ const Donate = () => {
       before:-z-2
       p-12 
       flex 
+      flex-col 
+      sm:flex-row 
       gap-6
       items-center 
       flex-end"

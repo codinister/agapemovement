@@ -9,11 +9,11 @@ const About = () => {
 
   return (
     <div className="cont my-15">
-      <div className="text-center mb-15 w-160 mx-auto">
+      <div className="text-center mb-15 w-auto sm:w-160 mx-auto">
         <h4 className="mb-6">{res?.title}</h4>
         <p>{res?.text}</p>
       </div>
-      <div className="flex gap-6 ">
+      <div className="flex flex-col sm:flex-row gap-6 ">
         {isSuccess
           ? res.cards.map(
               (v: { text: string; title: string; id: string }, k: number) => (

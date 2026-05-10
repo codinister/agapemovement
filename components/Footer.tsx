@@ -18,18 +18,18 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="bg-black py-12">
+      <footer className="bg-black px-12 py-12">
         <div className="container mx-auto">
           <div className="text-white text-center mb-6">
             <h3>Get In Touch</h3>
-            <p className="mt-4 mx-auto text-white/70 w-150">
+            <p className="mt-4 mx-auto text-white/70 sm:w-150">
               Getting in touch with Agape Movement is a meaningful step for
               anyone seeking connection, spiritual growth, or a community
               centered on love and service.
             </p>
           </div>
 
-          <div className="flex gap-10 my-10">
+          <div className="flex flex-col sm:flex-row gap-10 my-10">
             <div className="flex-1 text-center">
               <FiPhone className="text-black bg-primary mx-auto w-12 h-12 rounded-full flex justify-center items-center p-3" />
               <strong className="my-3 block text-primary">Phone</strong>
@@ -53,8 +53,8 @@ const Footer = () => {
           </div>
 
           <div className="my-6">
-            <Link href="/register" className="block mx-auto w-80">
-              <Button size="lg">
+            <Link href="/register" className="block mx-auto ms:w-80">
+              <Button className="flex mx-auto" size="lg">
                 Apply for membership <FaLongArrowAltRight />
               </Button>
             </Link>

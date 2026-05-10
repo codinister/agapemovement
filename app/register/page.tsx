@@ -43,7 +43,7 @@ const Register = () => {
   };
 
   return (
-    <section className="bg-gray-100 py-20">
+    <section className="bg-gray-100 py-20 sm:px-0 px-6">
       <div className="bg-white p-10 container mx-auto">
         <Link href="/">
           <Button className="outline cursor-pointer">
@@ -51,7 +51,7 @@ const Register = () => {
           </Button>
         </Link>
 
-        <div className="py-6 text-center w-150 mx-auto mb-12">
+        <div className="py-6 sm:text-center sm:w-150 mx-auto mb-12">
           <h3>Membership Application</h3>
           <p>
             Join a refined community of purpose-driven people dedicated to
@@ -74,7 +74,7 @@ const Register = () => {
               </strong>
 
               <div>
-                <div className="flex gap-4 mb-6">
+                <div className="flex flex-col sm:flex-row gap-4 mb-6">
                   <FormField
                     name="firstname"
                     control={form.control}
@@ -112,7 +112,7 @@ const Register = () => {
                   />
                 </div>
 
-                <div className="flex gap-4 mb-6">
+                <div className="flex sm:flex-row flex-col gap-4 mb-6">
                   <FormField
                     name="email"
                     control={form.control}
