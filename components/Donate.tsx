@@ -43,7 +43,7 @@ const Donate = () => {
         </h4>
       </div>
 
-      <div className="bg-white flex-1 min-h-60 p-10">
+      <div className="bg-white flex-1 min-h-60 p-3 sm:p-10">
         {state === 'amount' ? (
           <Donation />
         ) : state === 'donationInfo' ? (

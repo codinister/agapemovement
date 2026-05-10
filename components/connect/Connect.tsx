@@ -27,7 +27,7 @@ const Connect = () => {
   const phoneUrl = `tel:${res?.whatsapp}`;
   return (
     <>
-      <div className="fixed right-4 sm:right-12 z-10 top-[50%] -translate-y-[50%] w-10 h-10 ">
+      <div className="fixed right-2 sm:right-12 z-10 top-[50%] -translate-y-[50%] w-10 h-10 ">
         <div
           className={`z-1 absolute left-0 ${clicked ? '-top-2' : 'bottom-0'} `}
         >
