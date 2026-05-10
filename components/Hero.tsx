@@ -50,9 +50,9 @@ const Hero = () => {
           initial="hidden"
           animate="visible"
           transition={{
-            duration: 1,
+            duration: 3,
             ease: 'easeIn',
-            delay: 0.3,
+            delay: 2,
           }}
         >
           <Image
@@ -70,9 +70,9 @@ const Hero = () => {
           initial="hidden"
           animate="visible"
           transition={{
-            duration: 1,
+            duration: 3,
             ease: 'easeIn',
-            delay: 0.5,
+            delay: 4,
           }}
           className="opacity-0 -mt-3  text-white"
         >
@@ -85,9 +85,9 @@ const Hero = () => {
           initial="hidden"
           animate="visible"
           transition={{
-            duration: 1,
+            duration: 3,
             ease: 'easeIn',
-            delay: 0.7,
+            delay: 6,
           }}
         >
           <Link href="/register">
