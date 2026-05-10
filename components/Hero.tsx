@@ -5,6 +5,10 @@ import { Button } from './ui/button';
 import Image from 'next/image';
 import { FaLongArrowAltRight } from 'react-icons/fa';
 import Link from 'next/link';
+import { useInView } from 'motion/react';
+import { useRef } from 'react';
+import { motion } from 'motion/react';
+import { opacityVariants } from '@/components/variants';
 
 const Hero = () => {
   const { data, isSuccess } = useGetQuery('hero', '/hero');
@@ -15,6 +19,12 @@ const Hero = () => {
     '/settings',
   );
   const sett = isComplete ? settData.data[0] : '';
+
+  const ref = useRef(null);
+  const inVeiw = useInView(ref, {
+    amount: 'some',
+    once: false,
+  });
 
   return (
     <div
@@ -33,22 +43,59 @@ const Hero = () => {
       before:-z-2
       "
     >
-      <div className="text-center">
-        <Image
-          src={isComplete ? sett?.logo : '/empty.png'}
-          alt="Logo"
-          quality={100}
-          width={300}
-          height={220}
-          className="mx-auto"
-        />
-        <p className="-mt-3  text-white">{res?.motto}</p>
+      <div ref={ref} className="text-center">
+        <motion.div
+          className="opacity-0"
+          variants={opacityVariants}
+          initial="hidden"
+          animate="visible"
+          transition={{
+            duration: 1,
+            ease: 'easeIn',
+            delay: 0.3,
+          }}
+        >
+          <Image
+            src={isComplete ? sett?.logo : '/empty.png'}
+            alt="Logo"
+            quality={100}
+            width={300}
+            height={220}
+            className="mx-auto"
+          />
+        </motion.div>
 
-        <Link href="/register">
-          <Button className="mt-6 w-full" size="lg">
-            Apply for membership <FaLongArrowAltRight />
-          </Button>
-        </Link>
+        <motion.p
+          variants={opacityVariants}
+          initial="hidden"
+          animate="visible"
+          transition={{
+            duration: 1,
+            ease: 'easeIn',
+            delay: 0.5,
+          }}
+          className="opacity-0 -mt-3  text-white"
+        >
+          {res?.motto}
+        </motion.p>
+
+        <motion.div
+          className="opacity-0"
+          variants={opacityVariants}
+          initial="hidden"
+          animate="visible"
+          transition={{
+            duration: 1,
+            ease: 'easeIn',
+            delay: 0.7,
+          }}
+        >
+          <Link href="/register">
+            <Button className="mt-6 w-full" size="lg">
+              Apply for membership <FaLongArrowAltRight />
+            </Button>
+          </Link>
+        </motion.div>
       </div>
     </div>
   );
