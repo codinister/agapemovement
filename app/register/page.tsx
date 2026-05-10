@@ -43,7 +43,7 @@ const Register = () => {
   };
 
   return (
-    <section className="bg-gray-100 py-20 sm:px-0 px-6">
+    <section className="bg-gray-100 py-20 sm:px-0 px-3">
       <div className="bg-white p-10 container mx-auto">
         <Link href="/">
           <Button className="outline cursor-pointer">
