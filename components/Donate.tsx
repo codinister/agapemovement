@@ -19,7 +19,8 @@ const Donate = () => {
       before:inset-0 
       before:bg-black/60
       before:-z-2
-      p-12 
+      sm:p-12 
+      p-6
       flex 
       flex-col 
       sm:flex-row 
