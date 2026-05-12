@@ -40,7 +40,11 @@ const About = () => {
                     opacity: 0,
                     y: 40,
                   }}
-                  animate={{
+                  viewport={{
+                    amount: 0.3, 
+                    once: true
+                  }}
+                  whileInView={{
                     opacity: 1,
                     y: 0,
                     transition: {
