@@ -4,7 +4,8 @@ import Donation from './donate/Donation';
 import { useSelector } from 'react-redux';
 import DonationInfo from './donate/DonationInfo';
 import Paypal from './donate/Paypal';
-
+import { fadeDown } from '@/variants/variants';
+import { motion } from 'motion/react';
 const Donate = () => {
   const { data, isSuccess } = useGetQuery('donate', '/donate');
   const res = isSuccess ? data.data[0] : [];
@@ -34,14 +35,23 @@ const Donate = () => {
         backgroundAttachment: 'fixed',
       }}
     >
-      <div className="flex-1 flex justify-center items-center">
+      <motion.div
+        variants={fadeDown}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{
+          amount: 0.3,
+          once: true
+        }}
+        className="flex-1 flex justify-center items-center"
+      >
         <h4 className="text-left text-primary">
           <span className="inline-block bg-secondary text-white p-2 ">
             Donate Now
           </span>{' '}
           to support the wellness and wholeness of society.
         </h4>
-      </div>
+      </motion.div>
 
       <div className="bg-white flex-1 min-h-60 p-3 sm:p-10">
         {state === 'amount' ? (

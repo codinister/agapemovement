@@ -5,10 +5,9 @@ import { Button } from './ui/button';
 import Image from 'next/image';
 import { FaLongArrowAltRight } from 'react-icons/fa';
 import Link from 'next/link';
-import { useInView } from 'motion/react';
-import { useRef } from 'react';
 import { motion } from 'motion/react';
 import { opacityVariants } from '@/components/variants';
+import { fadeUp, staggerChildren } from '@/variants/variants';
 
 const Hero = () => {
   const { data, isSuccess } = useGetQuery('hero', '/hero');
@@ -19,12 +18,6 @@ const Hero = () => {
     '/settings',
   );
   const sett = isComplete ? settData.data[0] : '';
-
-  const ref = useRef(null);
-  const inVeiw = useInView(ref, {
-    amount: 'some',
-    once: false,
-  });
 
   return (
     <div
@@ -43,18 +36,17 @@ const Hero = () => {
       before:-z-2
       "
     >
-      <div ref={ref} className="text-center">
-        <motion.div
-          className="opacity-0"
-          variants={opacityVariants}
-          initial="hidden"
-          animate="visible"
-          transition={{
-            duration: 2,
-            ease: 'easeIn',
-            delay: 1,
-          }}
-        >
+      <motion.div
+        variants={staggerChildren}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{
+          amount: 0.3,
+          once: true,
+        }}
+        className="text-center"
+      >
+        <motion.div custom={0.1} variants={fadeUp}>
           <Image
             src={isComplete ? sett?.logo : '/empty.png'}
             alt="Logo"
@@ -65,38 +57,20 @@ const Hero = () => {
           />
         </motion.div>
 
-        <motion.p
-          variants={opacityVariants}
-          initial="hidden"
-          animate="visible"
-          transition={{
-            duration: 2,
-            ease: 'easeIn',
-            delay: 2,
-          }}
-          className="opacity-0 -mt-3  text-white"
-        >
+        <motion.p custom={0.2} variants={fadeUp} className=" -mt-3  text-white">
           {res?.motto}
         </motion.p>
 
-        <motion.div
-          className="opacity-0"
-          variants={opacityVariants}
-          initial="hidden"
-          animate="visible"
-          transition={{
-            duration: 2,
-            ease: 'easeIn',
-            delay: 4,
-          }}
-        >
+        <motion.div 
+        whileTap={{scale: 0.9}}
+        whileHover={{scale: 1.1}} custom={0.3} variants={fadeUp}>
           <Link href="/register">
             <Button className="mt-6 w-full" size="lg">
               Apply for membership <FaLongArrowAltRight />
             </Button>
           </Link>
         </motion.div>
-      </div>
+      </motion.div>
     </div>
   );
 };
