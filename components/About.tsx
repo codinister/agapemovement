@@ -11,34 +11,47 @@ const About = () => {
 
   return (
     <div className="cont my-15">
-
-      <motion.div 
-      variants={fadeDown}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{
-        amount: 0.6, 
-        once: true
-      }}
-      className="text-center mb-15 w-auto sm:w-160 mx-auto opacity-0">
+      <motion.div
+        variants={fadeDown}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{
+          amount: 0.6,
+          once: true,
+        }}
+        className="text-center mb-15 w-auto sm:w-160 mx-auto opacity-0"
+      >
         <h4 className="mb-6">{res?.title}</h4>
         <p>{res?.text}</p>
       </motion.div>
 
-      <motion.div className="flex flex-col sm:flex-row gap-6 "
-      variants={staggerChildren}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{amount: 0.3, once: true}}
+      <motion.div
+        className="flex flex-col sm:flex-row gap-6 "
+        variants={staggerChildren}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ amount: 0.3, once: true }}
       >
         {isSuccess
           ? res.cards.map(
               (v: { text: string; title: string; id: string }, k: number) => (
-                <motion.div 
-                custom={k * 0.2}
-                variants={fadeUp}
-                animate="visible"
-                className="p-6 shadow-xl flex-1" key={k}>
+                <motion.div
+                  initial={{
+                    opacity: 0,
+                    y: 40,
+                  }}
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      duration: 0.8,
+                      delay: k * 0.2,
+                      ease: 'easeOut',
+                    },
+                  }}
+                  className="p-6 shadow-xl flex-1"
+                  key={k}
+                >
                   <Icon id={v.id} />
                   <h6 className="mb-6">{v.title}</h6>
                   <p>{v.text}</p>
