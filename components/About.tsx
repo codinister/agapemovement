@@ -45,7 +45,7 @@ const About = () => {
                     y: 0,
                     transition: {
                       duration: 0.8,
-                      delay: k * 0.2,
+                      delay: (k * 0.2) + 1,
                       ease: 'easeOut',
                     },
                   }}
