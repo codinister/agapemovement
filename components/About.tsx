@@ -17,7 +17,7 @@ const About = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{
-        amount: 0.3, 
+        amount: 0.6, 
         once: true
       }}
       className="text-center mb-15 w-auto sm:w-160 mx-auto opacity-0">
@@ -37,6 +37,7 @@ const About = () => {
                 <motion.div 
                 custom={k * 0.2}
                 variants={fadeUp}
+                animate="visible"
                 className="p-6 shadow-xl flex-1" key={k}>
                   <Icon id={v.id} />
                   <h6 className="mb-6">{v.title}</h6>
