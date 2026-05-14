@@ -106,7 +106,8 @@ const Footer = () => {
           className="my-6">
             <Link href="/register" className="block mx-auto ms:w-80">
               <Button className="flex mx-auto" size="lg">
-                Apply for membership <FaLongArrowAltRight />
+                 Want to join? 
+                 <FaLongArrowAltRight />
               </Button>
             </Link>
           </motion.div>

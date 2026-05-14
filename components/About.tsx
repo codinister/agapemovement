@@ -25,13 +25,7 @@ const About = () => {
         <p>{res?.text}</p>
       </motion.div>
 
-      <motion.div
-        className="flex flex-col sm:flex-row gap-6 "
-        variants={staggerChildren}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ amount: 0.3, once: true }}
-      >
+      <div className="flex flex-col sm:flex-row gap-6 ">
         {isSuccess
           ? res.cards.map(
               (v: { text: string; title: string; id: string }, k: number) => (
@@ -41,8 +35,8 @@ const About = () => {
                     y: 40,
                   }}
                   viewport={{
-                    amount: 0.3, 
-                    once: true
+                    amount: 0.3,
+                    once: true,
                   }}
                   whileInView={{
                     opacity: 1,
@@ -63,7 +57,7 @@ const About = () => {
               ),
             )
           : ''}
-      </motion.div>
+      </div>
     </div>
   );
 };

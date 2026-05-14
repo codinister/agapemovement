@@ -66,7 +66,7 @@ const Hero = () => {
         whileHover={{scale: 1.1}} custom={0.3} variants={fadeUp}>
           <Link href="/register">
             <Button className="mt-6 w-full" size="lg">
-              Apply for membership <FaLongArrowAltRight />
+               Want to join? <FaLongArrowAltRight />
             </Button>
           </Link>
         </motion.div>
