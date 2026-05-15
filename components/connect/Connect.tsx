@@ -16,7 +16,7 @@ const Connect = () => {
   const { data, isSuccess } = useGetQuery('settings', '/settings');
   const res = isSuccess ? data.data[0] : [];
 
-  const encoded = encodeURIComponent('https://www.agapemovementus.org');
+  const encoded = encodeURIComponent('https://agapemovementus.org');
   const url = `https://wa.me/?text=${encoded}`;
 
   const whatsappEncode = encodeURIComponent(
